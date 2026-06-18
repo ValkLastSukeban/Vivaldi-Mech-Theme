@@ -1,0 +1,366 @@
+/* ==============================================================================
+   MECH COCKPIT CORE - RETRO INDUSTRIAL SPEC (V80.90 - REVISÃO AMBRA)
+   Blueprint: 80s/90s Military Cyber-Industrial Mech Interface (Vivaldi UI)
+   ============================================================================= */
+
+:root {
+    /* --- [BLINDAGEM FÍSICA]: METAL INDUSTRIAL & PLÁSTICO INJETADO --- */
+    --blue-glow: #cadbde;
+    --blue-bright: #7ea0ab;
+    --blue-light: #5c6c73;
+    --blue-base: #3a4145;
+    --blue-medium: #24292c;
+    --blue-dark: #171b1d;
+    --blue-shadow: rgba(0, 0, 0, 0.65);
+    
+    --orange-bright: #ffa46b;
+    --orange-light: #fc9e3a;
+    --orange-glow: #fa7719;
+    --orange-dim: #ad4f0a;
+    --orange-dark: #3d210d;
+    --orange-shadow: #1f1107;
+
+    --green-glow: #3bff55;
+    --green-light: rgba(32, 212, 47, 0.45);
+    --green-dark: #091f0c;
+    
+    --red-glow: #ff4444;
+    --red-dark: #2b0808;
+
+}
+
+/* ==============================================================================
+   1. MAIN COCKPIT CHASSIS (Placas de Aço Fosco Rebitadas)
+   ============================================================================= */
+#browser,
+.browser-window,
+#main {
+    color: var(--blue-glow) !important;
+    background-color: var(--blue-dark) !important;
+    font-family: 'Bahnschrift', 'Bahnschrift', monospace !important;
+}
+
+#titlebar,
+#tabs-subbar,
+#tabs-tabbar-container,
+.tabs-container {
+    background-color: var(--blue-base) !important;
+    border-bottom: 5px solid var(--blue-dark) !important;
+    
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--blue-light) 0%, var(--blue-base) 100%) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1) !important;
+}
+
+.tab-strip {
+    border-bottom: none !important;
+}
+
+/* ==============================================================================
+   2. TACTICAL RADAR STRIP (Abas Estilo Módulos de Botões Coesos)
+   ============================================================================= */
+.tab-position {
+    color: var(--blue-glow) !important;
+    text-transform: uppercase !important;
+}
+
+.tab-position .tab {
+    color: var(--blue-bright) !important;
+    background-color: #2e3538 !important;
+    background-image: linear-gradient(to bottom, var(--blue-light) 0%, var(--blue-dark) 100%) !important;
+
+    border-top: 2px solid var(--blue-bright) !important;
+    border-left: 2px solid var(--blue-bright)  !important;
+    border-right: 2px solid var(--blue-shadow) !important;
+    border-bottom: 2px solid var(--blue-shadow) !important;
+    
+    border-radius: 0 !important; 
+    
+    margin-right: 2px !important;
+    
+    box-shadow: 2px 2px 4px var(--blue-shadow) !important;
+    text-shadow: 0 -1px 1px var(--orange-shadow);
+    
+    transition: none !important; 
+}
+
+.tab-position .tab:hover {
+    background-image: linear-gradient(to bottom, var(--blue-light) 0%, var(--blue-dark) 100%) !important;
+    color: var(--orange-light) !important;
+
+    transform:translateY(1px) !important;
+}
+
+.tab-position .tab.active {
+
+    transform:translateY(2px) !important;
+
+    color: var(--orange-glow) !important;
+
+    background-image: linear-gradient(to bottom, var(--blue-light) 0%, var(--blue-dark) 100%) !important;
+
+    border-top: 1px solid var(--blue-bright) !important;
+    border-left: 1px solid var(--blue-bright)  !important;
+    border-right: 1px solid var(--blue-shadow) !important;
+    border-bottom: 1px solid var(--blue-shadow) !important;
+
+    box-shadow: 0 0 2px var(--orange-glow), inset 0 0 2px var(--orange-glow) !important;
+        
+    text-shadow: 0 0 4px var(--orange-glow) !important;
+}
+/* ==============================================================================
+   3. COMMAND CONSOLE FRAME (Terminal CRT / Tela de Fósforo Verde)
+   ============================================================================= */
+.toolbar-addressbar {
+    text-transform: uppercase !important;
+
+    color: whitesmoke !important;
+    background-image: linear-gradient(to bottom, var(--blue-dark) 0%, var(--blue-base) 5%, var(--blue-light) 100%) !important;
+    
+    padding: 8px 20px !important;
+
+    border-bottom: 4px transparent var(--green-dark) !important;
+    
+    box-shadow:
+            inset 0 0 12px var(--blue-shadow),
+            0 0 5px var(--green-light) !important;
+    text-shadow: 0 0 3px var(--green-light) !important;
+    
+}
+
+.UrlBar-AddressField{
+    font-family: 'Bahnschrift', monospace !important;
+    background-image: repeating-linear-gradient(to bottom, transparent 1px, var(--green-dark) 2px, transparent 1px, var(--blue-dark) 3px, transparent 1px) !important;
+
+}
+
+.UrlField input {
+    text-transform: uppercase !important;
+    font-family: "Bahnschrift", sans-serif !important;
+    box-shadow:
+            inset 0 0 12px var(--blue-shadow),
+            0 0 5px var(--green-glow) !important;
+    text-shadow: 0 0 3px var(--green-glow) !important;
+
+}
+
+.UrlBar-AddressField input::selection {
+    color: whitesmoke !important;
+    background-color: black !important;
+    background-image: var(--orange-glow);
+}
+
+
+
+.UrlBar-AddressField:focus-within {
+    outline: none !important;
+    border: 2px transparent var(--green-light) !important;
+    background-color: black !important;
+    background-image: repeating-linear-gradient(to bottom, transparent 1px, var(--green-light) 2px, transparent 1px, var(--blue-dark) 3px, transparent 1px) !important;
+    
+}
+
+
+
+/* ==============================================================================
+   4. UNIVERSAL HARDWARE SWITCHES (Botões Mecânicos "Clicky")
+   ============================================================================= */
+.toolbar-addressbar .button-toolbar button,
+.toolbar-navigation button,
+.button-toolbar:not(.toolbar-spacer-flexible) button,
+.button-toolbar button.active,
+.button-toolbar button.checked,
+.button-toolbar button:focus,
+button.newtab,
+.newtab button,
+.button-toolbar.newtab button,
+.TabStrip-NewTab,
+.window-buttongroup button {
+    background-color: var(--blue-light) !important;
+    background-image: linear-gradient(to bottom, var(--blue-base) 0%, var(--blue-light) 100%) !important;
+    
+    border-top: 2px solid var(--blue-light) !important;
+    border-left: 2px solid var(--blue-light) !important;
+    border-right: 2px solid var(--blue-dark) !important;
+    border-bottom: 2px solid var(--blue-dark) !important;
+    border-radius: 0 !important;
+    
+    box-shadow: 1px 1px 2px var(--blue-shadow) !important;
+    transition: none !important;
+}
+
+.toolbar-addressbar .button-toolbar button svg,
+.toolbar-navigation button svg,
+.button-toolbar button svg,
+button.newtab svg,
+.window-buttongroup button svg {
+    color: var(--blue-glow) !important; 
+    stroke: currentColor !important;
+    stroke-width: 1px !important;
+    filter: none !important;
+}
+
+.toolbar-addressbar .button-toolbar button:hover,
+.toolbar-navigation button:hover,
+.button-toolbar button:hover,
+button.newtab:hover,
+.window-buttongroup button:not(.window-close):hover {
+    transform:translateY(1px) !important;
+}
+
+.toolbar-addressbar .button-toolbar button:hover svg,
+.toolbar-navigation button:hover svg,
+.button-toolbar button:hover svg,
+button.newtab:hover svg,
+.window-buttongroup button:hover svg {
+    color: var(--orange-light) !important;
+}
+
+.toolbar-addressbar .button-toolbar button:active svg,
+.toolbar-navigation button:active svg,
+.button-toolbar button:active svg,
+button.newtab:active svg,
+.window-buttongroup button:active svg {
+    color: var(--orange-glow) !important;
+}
+
+.toolbar-addressbar .button-toolbar button:active,
+.toolbar-navigation button:active,
+.button-toolbar button:active,
+button.newtab:active,
+.window-buttongroup button:active {
+    color:white !important;
+    transform:translateY(1px) !important;
+    
+    border-top: 1px solid var(--blue-light) !important;
+    border-left: 1px solid var(--blue-light) !important;
+    border-right: 1px solid var(--blue-dark) !important;
+    border-bottom: 1px solid var(--blue-dark) !important;
+    
+    border-radius: 0 !important;
+}
+
+/* ==============================================================================
+   5. COCKPIT INSIGNIA - MENU BUTTON
+   ============================================================================== */
+button.vivaldi svg { display: none !important; }
+
+button.vivaldi {
+    background-color: var(--orange-glow) !important;
+    background-image: linear-gradient(to bottom, var(--orange-light) 0%, var(--orange-glow) 100%) !important;
+
+    border-top: 3px solid var(--orange-bright) !important;
+    border-left: 3px solid var(--orange-bright) !important;
+    border-right: 2px solid var(--orange-shadow) !important;
+    border-bottom: 2px solid var(--orange-shadow) !important;
+    border-radius: 0 !important;
+    
+    box-shadow: 0 0 4px var(--orange-shadow) !important;
+    
+    width: 3.69% !important;
+    
+}
+
+button.vivaldi::before {
+    content: 'MENU' !important; 
+    color: var(--blue-base) !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
+    
+}
+
+button.vivaldi:hover {
+    transform:translateY(1px) !important;
+}
+
+button.vivaldi.menu-open {
+
+    transform:translateY(1px) !important;
+
+    border-top: 2px solid var(--orange-bright) !important;
+    border-left: 2px solid var(--orange-bright) !important;
+    border-right: 1px solid var(--orange-shadow) !important;
+    border-bottom: 1px solid var(--orange-shadow) !important;
+    
+    border-radius: 0 !important;
+    
+    box-shadow: 0 0 10px var(--orange-glow) !important;
+}
+
+/* ==============================================================================
+   6. TACTICAL WINDOW'S CONTROL (Ejection Switches - RED ALERT)
+   ============================================================================= */
+.window-buttongroup button{
+    position:relative;
+    scale: 80% !important;
+}
+.window-buttongroup button.window-close:hover {
+    background-color: var(--red-dark) !important;
+    background-image: linear-gradient(to bottom, #b31b1b 0%, #540808 100%) !important;
+    
+    border-top: 2px solid #ff8080 !important;
+    border-left: 2px solid #ff8080 !important;
+    border-right: 2px solid black !important;
+    border-bottom: 2px solid black !important;
+}
+
+.window-buttongroup button.window-close:hover svg {
+    color: white !important;
+}
+.window-buttongroup button.window-minimize svg, button.window-maximize svg, button.window-close svg{
+    scale: 250% !important;
+}
+
+/* ==============================================================================
+   7. COCKPIT SIDEBAR & SCROLLBARS (Painéis Pesados de Suporte)
+   ============================================================================= */
+#panels-container, #panels, .panel, .sidebar {
+    background-color: var(--blue-dark) !important;
+    border-right: 3px solid var(--blue-base) !important;
+    box-shadow: inset -4px 0 10px rgba(0, 0, 0, 0.7) !important;
+}
+
+::-webkit-scrollbar {
+    width: 12px !important; 
+    background-color: var(--blue-dark) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blue-light) !important;
+    background-image: linear-gradient(to right, var(--blue-bright) 0%, var(--blue-light) 100%) !important;
+    border: 2px solid var(--blue-dark) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--orange-glow) !important;
+    background-image: none !important;
+}
+
+/* ==============================================================================
+   8. COMPONENT FIXATION - PARAFUSOS FENDA DE RACK
+   ============================================================================= */
+.toolbar-addressbar::before{
+    content: '||' !important;
+    position: absolute !important;
+    top: 6px !important;
+    font-size: 14px !important;
+    color: var(--blue-medium) !important;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.2) !important;
+    font-weight: bold !important;
+    z-index: 99 !important;
+}
+.toolbar-addressbar::after {
+    content: '||' !important; 
+    position: absolute !important;
+    top: 6px !important;
+    font-size: 14px !important;
+    color: var(--blue-medium) !important;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.2) !important;
+    font-weight: bold !important;
+    z-index: 99 !important;
+}
+
+.toolbar-addressbar::before { left: 4px !important; }
+.toolbar-addressbar::after { right: 4px !important; }

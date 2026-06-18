@@ -1,0 +1,11 @@
+/* ==============================================================================
+   MECH COCKPIT - ASSET BANK (Base64 Data Storage)
+   ============================================================================= */
+:root {
+    --img-chassis: url('data:image/png;base64,COLE_A_STRING_GIGANTE_DO_CHASSIS_AQUI') !important;       
+    --img-rack-top: url('data:image/png;base64,COLE_A_STRING_GIGANTE_DO_RACK_TOP_AQUI') !important;     
+    --img-rack-address: url('data:image/png;base64,COLE_A_STRING_GIGANTE_DA_ADDRESSBAR_AQUI') !important; 
+    --img-aba-inativa: url('data:image/png;base64,COLE_A_STRING_GIGANTE_DA_ABA_INATIVA_AQUI') !important;  
+    --img-aba-ativa: url('data:image/png;base64,COLE_A_STRING_GIGANTE_DA_ABA_ATIVA_AQUI') !important;     
+    --img-rack-sidebar: url('data:image/png;base64,COLE_A_STRING_GIGANTE_DA_SIDEBAR_AQUI') !important; 
+}
