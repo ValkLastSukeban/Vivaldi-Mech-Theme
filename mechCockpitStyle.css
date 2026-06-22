@@ -16,12 +16,13 @@
     --orange-bright: #ffa46b;
     --orange-light: #fc9e3a;
     --orange-glow: #fa7719;
-    --orange-dim: #ad4f0a;
+    --orange-dim: #c05b2b;
     --orange-dark: #3d210d;
     --orange-shadow: #1f1107;
 
-    --green-glow: #3bff55;
-    --green-light: rgba(32, 212, 47, 0.45);
+    --green-glow: #2d801b;
+    --green-scanline: rgba(59, 253, 84, 0.35);
+    --green-dim: #305434;
     --green-dark: #091f0c;
     
     --red-glow: #ff4444;
@@ -62,56 +63,46 @@
    2. TACTICAL RADAR STRIP (Abas Estilo Módulos de Botões Coesos)
    ============================================================================= */
 .tab-position {
-    color: var(--blue-glow) !important;
     text-transform: uppercase !important;
 }
 
 .tab-position .tab {
-    color: var(--blue-bright) !important;
-    background-color: #2e3538 !important;
-    background-image: linear-gradient(to bottom, var(--blue-light) 0%, var(--blue-dark) 100%) !important;
+    color: var(--blue-light) !important;
+    background-color: black !important;
+    background-image: linear-gradient(to bottom, var(--blue-medium) 0%, var(--blue-base) 100%) !important;
 
-    border-top: 2px solid var(--blue-bright) !important;
-    border-left: 2px solid var(--blue-bright)  !important;
-    border-right: 2px solid var(--blue-shadow) !important;
-    border-bottom: 2px solid var(--blue-shadow) !important;
+    border-top: 2px solid var(--blue-light) !important;
+    border-left: 2px solid var(--blue-light)  !important;
+    border-right: 4px solid var(--blue-shadow) !important;
+    border-bottom: 4px solid var(--blue-shadow) !important;
     
     border-radius: 0 !important; 
     
     margin-right: 2px !important;
     
-    box-shadow: 2px 2px 4px var(--blue-shadow) !important;
-    text-shadow: 0 -1px 1px var(--orange-shadow);
+    box-shadow: 2px 2px 4px var(--blue-base) !important;
     
     transition: none !important; 
 }
 
 .tab-position .tab:hover {
-    background-image: linear-gradient(to bottom, var(--blue-light) 0%, var(--blue-dark) 100%) !important;
-    color: var(--orange-light) !important;
-
-    transform:translateY(1px) !important;
+    color: var(--orange-dim) !important;
 }
 
 .tab-position .tab.active {
+    transform:translateY(1px) !important;
 
-    transform:translateY(2px) !important;
+    color: var(--orange-light) !important;
 
-    color: var(--orange-glow) !important;
-
-    background-image: linear-gradient(to bottom, var(--blue-light) 0%, var(--blue-dark) 100%) !important;
-
-    border-top: 1px solid var(--blue-bright) !important;
-    border-left: 1px solid var(--blue-bright)  !important;
-    border-right: 1px solid var(--blue-shadow) !important;
-    border-bottom: 1px solid var(--blue-shadow) !important;
-
-    box-shadow: 0 0 2px var(--orange-glow), inset 0 0 2px var(--orange-glow) !important;
+    border-right: 2px solid var(--blue-shadow) !important;
+    border-bottom: 2px solid var(--blue-shadow) !important;
+    
+    box-shadow: 0 0 3px var(--orange-glow), inset 0 0 3px var(--orange-glow) !important;
         
-    text-shadow: 0 0 4px var(--orange-glow) !important;
+    text-shadow: 0 0 12px var(--orange-glow) !important;
 }
 /* ==============================================================================
-   3. COMMAND CONSOLE FRAME (Terminal CRT / Tela de Fósforo Verde)
+   3. COMMAND CONSOLE FRAME (Terminal CRT)
    ============================================================================= */
 .toolbar-addressbar {
     text-transform: uppercase !important;
@@ -125,40 +116,48 @@
     
     box-shadow:
             inset 0 0 12px var(--blue-shadow),
-            0 0 5px var(--green-light) !important;
-    text-shadow: 0 0 3px var(--green-light) !important;
+            0 0 5px var(--green-dim) !important;
+    text-shadow: 0 0 3px var(--green-dim) !important;
     
 }
 
 .UrlBar-AddressField{
     font-family: 'Bahnschrift', monospace !important;
-    background-image: repeating-linear-gradient(to bottom, transparent 1px, var(--green-dark) 2px, transparent 1px, var(--blue-dark) 3px, transparent 1px) !important;
-
+    background-image: repeating-linear-gradient(to bottom, var(--green-dim) 0px, transparent 1px, var(--green-dark) 1px, transparent 3px) !important;
+    box-shadow: inset 0 0 12px var(--blue-shadow) !important;
 }
 
 .UrlField input {
     text-transform: uppercase !important;
     font-family: "Bahnschrift", sans-serif !important;
+
     box-shadow:
             inset 0 0 12px var(--blue-shadow),
-            0 0 5px var(--green-glow) !important;
-    text-shadow: 0 0 3px var(--green-glow) !important;
+            0 0 5px var(--green-scanline) !important;
+    text-shadow: 0 0 3px var(--green-scanline) !important;
 
 }
 
 .UrlBar-AddressField input::selection {
     color: whitesmoke !important;
-    background-color: black !important;
-    background-image: var(--orange-glow);
+    background-color: var(--green-glow) !important;
 }
 
+.OmniDropdown{
+    background-color: black !important;
+    background-image: repeating-linear-gradient(to bottom, var(--green-dim) 1px, transparent 2px, var(--green-dark) 3px, transparent 5px) !important;
+}
 
+.OmniLinkItem--Highlighted{
+    color: whitesmoke !important;
+    background-color: var(--green-scanline) !important;
+}
 
 .UrlBar-AddressField:focus-within {
     outline: none !important;
-    border: 2px transparent var(--green-light) !important;
+    border: 2px transparent var(--green-scanline) !important;
     background-color: black !important;
-    background-image: repeating-linear-gradient(to bottom, transparent 1px, var(--green-light) 2px, transparent 1px, var(--blue-dark) 3px, transparent 1px) !important;
+    background-image: repeating-linear-gradient(to bottom, var(--green-dim) 1px, transparent 2px, var(--green-dark) 3px, transparent 5px) !important;
     
 }
 
@@ -178,13 +177,13 @@ button.newtab,
 .button-toolbar.newtab button,
 .TabStrip-NewTab,
 .window-buttongroup button {
-    background-color: var(--blue-light) !important;
-    background-image: linear-gradient(to bottom, var(--blue-base) 0%, var(--blue-light) 100%) !important;
+    background-color: black !important;
+    background-image: linear-gradient(to bottom, var(--blue-medium) 0%, var(--blue-base) 100%) !important;
     
     border-top: 2px solid var(--blue-light) !important;
     border-left: 2px solid var(--blue-light) !important;
-    border-right: 2px solid var(--blue-dark) !important;
-    border-bottom: 2px solid var(--blue-dark) !important;
+    border-right: 3px solid var(--blue-shadow) !important;
+    border-bottom: 3px solid var(--blue-shadow) !important;
     border-radius: 0 !important;
     
     box-shadow: 1px 1px 2px var(--blue-shadow) !important;
@@ -207,7 +206,7 @@ button.newtab svg,
 .button-toolbar button:hover,
 button.newtab:hover,
 .window-buttongroup button:not(.window-close):hover {
-    transform:translateY(1px) !important;
+    
 }
 
 .toolbar-addressbar .button-toolbar button:hover svg,
@@ -215,7 +214,7 @@ button.newtab:hover,
 .button-toolbar button:hover svg,
 button.newtab:hover svg,
 .window-buttongroup button:hover svg {
-    color: var(--orange-light) !important;
+    color: var(--orange-dim) !important;
 }
 
 .toolbar-addressbar .button-toolbar button:active svg,
@@ -223,7 +222,7 @@ button.newtab:hover svg,
 .button-toolbar button:active svg,
 button.newtab:active svg,
 .window-buttongroup button:active svg {
-    color: var(--orange-glow) !important;
+    color: var(--orange-light) !important;
 }
 
 .toolbar-addressbar .button-toolbar button:active,
@@ -231,15 +230,16 @@ button.newtab:active svg,
 .button-toolbar button:active,
 button.newtab:active,
 .window-buttongroup button:active {
-    color:white !important;
-    transform:translateY(1px) !important;
+    color:black !important;
     
-    border-top: 1px solid var(--blue-light) !important;
-    border-left: 1px solid var(--blue-light) !important;
-    border-right: 1px solid var(--blue-dark) !important;
-    border-bottom: 1px solid var(--blue-dark) !important;
+    border-right: 2px solid var(--blue-shadow) !important;
+    border-bottom: 2px solid var(--blue-shadow) !important;
     
     border-radius: 0 !important;
+
+    box-shadow: 0 0 6px var(--orange-glow), inset 0 0 3px var(--orange-glow) !important;
+
+    transform:translateY(1px) !important;
 }
 
 /* ==============================================================================
@@ -251,10 +251,10 @@ button.vivaldi {
     background-color: var(--orange-glow) !important;
     background-image: linear-gradient(to bottom, var(--orange-light) 0%, var(--orange-glow) 100%) !important;
 
-    border-top: 3px solid var(--orange-bright) !important;
-    border-left: 3px solid var(--orange-bright) !important;
-    border-right: 2px solid var(--orange-shadow) !important;
-    border-bottom: 2px solid var(--orange-shadow) !important;
+    border-top: 2px solid var(--orange-bright) !important;
+    border-left: 2px solid var(--orange-bright) !important;
+    border-right: 3px solid var(--orange-shadow) !important;
+    border-bottom: 3px solid var(--orange-shadow) !important;
     border-radius: 0 !important;
     
     box-shadow: 0 0 4px var(--orange-shadow) !important;
@@ -267,26 +267,23 @@ button.vivaldi::before {
     content: 'MENU' !important; 
     color: var(--blue-base) !important;
     font-weight: bold !important;
-    font-size: 12px !important;
+    font-size: 16px !important;
+    text-align: left;
+    margin-left: -20%;
     
 }
 
 button.vivaldi:hover {
-    transform:translateY(1px) !important;
+    box-shadow: 0 0 12px var(--orange-light) !important;
 }
 
 button.vivaldi.menu-open {
-
-    transform:translateY(1px) !important;
-
+    box-shadow: 0 0 12px var(--orange-glow), inset 0 0 6px var(--orange-glow) !important;
     border-top: 2px solid var(--orange-bright) !important;
     border-left: 2px solid var(--orange-bright) !important;
-    border-right: 1px solid var(--orange-shadow) !important;
-    border-bottom: 1px solid var(--orange-shadow) !important;
+    border-right: 2px solid var(--orange-shadow) !important;
+    border-bottom: 2px solid var(--orange-shadow) !important;
     
-    border-radius: 0 !important;
-    
-    box-shadow: 0 0 10px var(--orange-glow) !important;
 }
 
 /* ==============================================================================
